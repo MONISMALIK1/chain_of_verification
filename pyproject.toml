@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chain_of_verification"
+version = "0.1.0"
+description = "Chain-of-Verification (Dhuliawala et al., 2023): draft, plan verification questions, answer them independently, then revise. From scratch, zero deps."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.11"
+dependencies = []   # zero third-party deps — pure stdlib + OpenAI-compatible HTTP
+
+[project.scripts]
+chain_of_verification = "chain_of_verification.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["chain_of_verification*"]
+
+[tool.setuptools.package-data]
+chain_of_verification = ["py.typed"]
